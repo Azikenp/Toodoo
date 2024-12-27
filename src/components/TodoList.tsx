@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import TodolistItem from "./TodolistItem";
 
-const TodoList = () => {
-  return (
-    <div>TodoList</div>
-  )
+interface TodoListProps {
+  todos: Array<Todo>;
+  toggleComplete: ToggleComplete;
 }
 
-export default TodoList
+const TodoList: React.FC<TodoListProps> = ({ todos, toggleComplete }) => {
+  return (
+    <ul>
+      {todos.map((todo) => {
+        return (
+          <TodolistItem
+            key={todo.text}
+            todo={todo}
+            toggleComplete={toggleComplete}
+          />
+        );
+      })}
+    </ul>
+  );
+};
+
+export default TodoList;
