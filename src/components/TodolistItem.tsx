@@ -1,4 +1,5 @@
 import React from "react";
+import Dropdown from "./Dropdown";
 
 interface TodolistItemProps {
   todo: Todo;
@@ -19,6 +20,7 @@ const TodolistItem: React.FC<TodolistItemProps> = ({
         />
         {todo.text}
       </label>
+      <Dropdown />
     </li>
   );
 };
