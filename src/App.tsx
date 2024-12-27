@@ -1,7 +1,7 @@
 import TodoForm from "./components/TodoForm";
 import "./App.css";
 import { useState } from "react";
-import Todolist from "./components/Todolist";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState<Array<Todo>>([]);
@@ -23,10 +23,10 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="todo-app">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodo} />
-      <Todolist todos={todos} toggleComplete={toggleComplete} />
+      <TodoList todos={todos} toggleComplete={toggleComplete} />
     </div>
   );
 };
