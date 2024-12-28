@@ -10,12 +10,23 @@ const TodolistItem: React.FC<TodolistItemProps> = ({
   todo,
   toggleComplete,
 }) => {
-  const onDelete = () => {};
+
+  const onDelete = () => {console.log("delete");
+  };
+
+  const onEdit = () => {console.log("edit");
+  };
 
   const dropdownOptions: Array<Option> = [
     {
       value: "Delete",
       onClick: onDelete,
+      color: "red"
+    },
+    {
+      value: "Edit",
+      onClick: onEdit,
+      color: 'blue'
     },
   ];
 

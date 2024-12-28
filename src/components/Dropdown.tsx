@@ -2,7 +2,7 @@ import React from "react";
 
 interface DropdownItemsProps {
   icon?: string;
-  option: Array<Option>;
+  options: Array<Option>;
 }
 
 const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
