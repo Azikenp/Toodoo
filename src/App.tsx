@@ -12,21 +12,35 @@ const App = () => {
     }
   };
 
-  const toggleComplete: ToggleComplete = selectedItem => {
+  const removeTodo: RemoveTodo = (todoToRemove) => {
+    const updatedTodos: Array<Todo> = todos.filter(
+      (todo) => todo.text != todoToRemove.text
+    );
+    setTodos(updatedTodos);
+  };
+
+  const editTodo: EditTodo = (todoToEdit) => {
+    const todoToUpdateIndex: number = todos.findIndex(
+      (todo) => todo.text === todoToEdit.text
+    );
+    console.log(todoToUpdateIndex);
+  };
+
+  const toggleComplete: ToggleComplete = (selectedItem) => {
     const updatedTodos = todos.map((todo) => {
-      if(todo === selectedItem){
-        return {...todo, complete: !todo.complete}
+      if (todo === selectedItem) {
+        return { ...todo, complete: !todo.complete };
       }
-      return todo
-    })
-    setTodos(updatedTodos)
-  }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
 
   return (
     <div className="todo-app">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleComplete={toggleComplete} />
+      <TodoList todos={todos} toggleComplete={toggleComplete} onRemoveTodo={removeTodo} onEditTodo={editTodo} />
     </div>
   );
 };

@@ -20,7 +20,9 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
       {isOpen && (
         <div className="dropdown-list-container">
           {options.map((option: Option) => (
-            <button className="dropdown-list-btn">{option.value}</button>
+            <button className="dropdown-list-btn" onClick={option.onClick}>
+              {option.value}
+            </button>
           ))}
         </div>
       )}

@@ -4,9 +4,16 @@ import TodolistItem from "./TodolistItem";
 interface TodoListProps {
   todos: Array<Todo>;
   toggleComplete: ToggleComplete;
+  onRemoveTodo: RemoveTodo;
+  onEditTodo: EditTodo;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos, toggleComplete }) => {
+const TodoList: React.FC<TodoListProps> = ({
+  todos,
+  toggleComplete,
+  onRemoveTodo,
+  onEditTodo,
+}) => {
   return (
     <ul>
       {todos.map((todo) => {
@@ -15,6 +22,8 @@ const TodoList: React.FC<TodoListProps> = ({ todos, toggleComplete }) => {
             key={todo.text}
             todo={todo}
             toggleComplete={toggleComplete}
+            onRemoveTodo={onRemoveTodo}
+            editTodo={onEditTodo}
           />
         );
       })}

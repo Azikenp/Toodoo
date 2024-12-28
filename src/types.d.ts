@@ -1,4 +1,6 @@
 type AddTodo = (newTodo: string) => void;
+type EditTodo = (todoToEdit: Todo) => void;
+type RemoveTodo = (todoToRemove: Todo) => void;
 
 type Todo = { text: string; complete: boolean };
 

@@ -4,18 +4,22 @@ import Dropdown from "./Dropdown";
 interface TodolistItemProps {
   todo: Todo;
   toggleComplete: ToggleComplete;
+  onRemoveTodo: RemoveTodo;
+  editTodo: EditTodo;
 }
 
 const TodolistItem: React.FC<TodolistItemProps> = ({
   todo,
   toggleComplete,
+  onRemoveTodo,
+  editTodo,
 }) => {
   const onDelete = () => {
-    console.log("delete");
+    onRemoveTodo(todo);
   };
 
   const onEdit = () => {
-    console.log("edit");
+    onEditTodo(todo);
   };
 
   const dropdownOptions: Array<Option> = [
