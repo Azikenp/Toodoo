@@ -10,29 +10,30 @@ const TodolistItem: React.FC<TodolistItemProps> = ({
   todo,
   toggleComplete,
 }) => {
-
-  const onDelete = () => {console.log("delete");
+  const onDelete = () => {
+    console.log("delete");
   };
 
-  const onEdit = () => {console.log("edit");
+  const onEdit = () => {
+    console.log("edit");
   };
 
   const dropdownOptions: Array<Option> = [
     {
       value: "Delete",
       onClick: onDelete,
-      color: "red"
+      color: "red",
     },
     {
       value: "Edit",
       onClick: onEdit,
-      color: 'blue'
+      color: "blue",
     },
   ];
 
   return (
-    <li>
-      <label className={todo.complete ? "todo-row completed" : "todo-row"}>
+    <li className={todo.complete ? "todo-row completed" : "todo-row"}>
+      <label>
         <input
           type="checkbox"
           onChange={() => toggleComplete(todo)}
