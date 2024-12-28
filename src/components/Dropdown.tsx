@@ -1,6 +1,11 @@
 import React from "react";
 
-const Dropdown: React.FC = () => {
+interface DropdownItemsProps {
+  icon?: string;
+  option: Array<Option>
+}
+
+const Dropdown: React.FC<DropdownItemsProps> = () => {
   return (
     <div className="dropdown">
       <div className="dropdown-title">Dropdown</div>
