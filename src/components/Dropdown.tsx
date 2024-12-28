@@ -12,6 +12,14 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
     setIsOpen(!isOpen);
   };
 
+  const dropdownClick = (option: Option) => {
+    if (option.value == "Edit") {
+      setIsOpen(false);
+    } else {
+      option.onClick();
+    }
+  };
+
   return (
     <div className="dropdown">
       <div className="dropdown-title" onClick={dropDownToggle}>
@@ -20,7 +28,10 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
       {isOpen && (
         <div className="dropdown-list-container">
           {options.map((option: Option) => (
-            <button className="dropdown-list-btn" onClick={option.onClick}>
+            <button
+              className="dropdown-list-btn"
+              onClick={() => dropdownClick(option)}
+            >
               {option.value}
             </button>
           ))}
