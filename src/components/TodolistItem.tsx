@@ -10,6 +10,15 @@ const TodolistItem: React.FC<TodolistItemProps> = ({
   todo,
   toggleComplete,
 }) => {
+  const onDelete = () => {};
+
+  const dropdownOptions: Array<Option> = [
+    {
+      value: "Delete",
+      onClick: onDelete,
+    },
+  ];
+
   return (
     <li>
       <label className={todo.complete ? "todo-row completed" : "todo-row"}>
@@ -20,7 +29,7 @@ const TodolistItem: React.FC<TodolistItemProps> = ({
         />
         {todo.text}
       </label>
-      <Dropdown />
+      <Dropdown options={dropdownOptions} />
     </li>
   );
 };
