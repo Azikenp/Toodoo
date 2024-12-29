@@ -15,9 +15,8 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
   const dropdownClick = (option: Option) => {
     if (option.value == "Edit") {
       setIsOpen(false);
-    } else {
-      option.onClick();
     }
+    option.onClick();
   };
 
   return (
