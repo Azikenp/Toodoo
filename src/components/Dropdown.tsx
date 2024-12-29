@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 interface DropdownItemsProps {
   icon?: string;
@@ -22,7 +23,7 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
   return (
     <div className="dropdown">
       <div className="dropdown-title" onClick={dropDownToggle}>
-        Dropdown
+        <BsThreeDotsVertical />
       </div>
       {isOpen && (
         <div className="dropdown-list-container">
