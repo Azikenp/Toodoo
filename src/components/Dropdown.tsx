@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownItemsProps> = ({ options }) => {
   return (
     <div className="dropdown">
       <div className="dropdown-title" onClick={dropDownToggle}>
-        <BsThreeDotsVertica />
+        <BsThreeDotsVertical />
       </div>
       {isOpen && (
         <div className="dropdown-list-container">
